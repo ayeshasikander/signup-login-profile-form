@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Form, Input, Divider, Typography,message } from 'antd';
 import {  useNavigate} from 'react-router-dom';
 
+
 const Login = () => {
     const { Link } = Typography
     const navigate = useNavigate();
@@ -11,8 +12,6 @@ const Login = () => {
         const existingUser = storedUsers.find(user => user.email === values.email && user.password === values.password);
 
         if (existingUser) {
-        //     console.log('Existing user:', existingUser);
-        // console.log('User ID:', existingUser.id);
             navigate(`/profile/${existingUser.email}`);
             
         } else {
